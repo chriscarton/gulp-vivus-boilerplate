@@ -9,5 +9,34 @@
 <body>
 	<h1>Gulp Vivus Boilerplate</h1>
 	<p>Oh yeah.</p>
+
+	<div class="container">
+		<div id="svgContainer"></div>
+	</div>
+
+
+	<script src="vivus.min.js"></script>
+	<script>
+		//new Vivus('svgContainer', { duration: 200, file: 'drawing.svg' }, myCallback);
+		new Vivus('svgContainer', { 
+			duration: 1000, 
+			//chemin vers le fichier svg
+			file: 'drawing.svg',
+			//oneByOne, Delayed, Sync
+			type: 'oneByOne',
+			//EASE, EASE_IN, EASE_OUT and EASE_OUT_BOUNCE
+			pathTimingFunction: Vivus.EASE_IN,
+			//Le suivant concerne l'animation de l'ensemble du dessin
+			animTimingFunction: Vivus.EASE_OUT
+		},myCallback);
+
+		function myCallback(){
+			alert('animation terminée!');
+		}
+
+	</script>
+	
+
+
 </body>
 </html>
